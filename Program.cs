@@ -12,6 +12,7 @@ namespace LaboOefeningen
             Console.WriteLine("3. Strings en hun methoden");
             Console.WriteLine("4. Beslissingen");
             Console.WriteLine("5. Loops");
+            Console.WriteLine("6. Arrays");
             int keuze = Convert.ToInt32(Console.ReadLine());
             if (keuze == 1) 
             {
@@ -32,6 +33,10 @@ namespace LaboOefeningen
             else if (keuze == 5)
             {
                 Hoofdstuk05.Keuzemenu();
+            }
+            else if (keuze == 6)
+            {
+                Hoofdstuk06.Keuzemenu();
             }
             // zelf aanvullen met resterende keuzemenu's voor andere onderwerpen
         }
