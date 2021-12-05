@@ -153,13 +153,14 @@ namespace LaboOefeningen
 
                 string item = Console.ReadLine();
 
-                if (Array.BinarySearch(items, item) < 0)
+                // if (Array.BinarySearch(items, item) < 0)
+                if (Array.IndexOf(items, item) < 0)
                 {
                     Console.WriteLine("Dit item bevindt zich niet op de lijst!");
                 }
                 else
                 {
-                    items[Array.BinarySearch(items, item)] = "gekocht";
+                    items[Array.IndexOf(items, item)] = "gekocht";
                 }
 
                 Console.WriteLine("Nog winkelen? (Ja of Nee)");
@@ -210,7 +211,6 @@ namespace LaboOefeningen
 
         public static void Lotto()
         {
-            Random random = new Random();
             int[] lottoFormulier = new int[6];
             
             // Ingeven van de lotto getallen
@@ -220,7 +220,7 @@ namespace LaboOefeningen
             // Vergeet niet dat de beginindex van een array 0 is
             for (i = 0; i < lottoFormulier.Length; i++)
             {
-                Console.WriteLine("Geef lotto nummer " + (i + 1).ToString());
+                Console.WriteLine($"Geef lotto nummer {i + 1}");
                 lottoFormulier[i] = Convert.ToInt32(Console.ReadLine());
             }
             int[] lottoTrekking = new int[6];
@@ -231,6 +231,7 @@ namespace LaboOefeningen
             {
                 lottoTrekking[i] = 0;
             }
+            Random random = new Random();
             int lottoGetal;
             
             for (i = 0; i < lottoTrekking.Length; i++)
@@ -244,7 +245,7 @@ namespace LaboOefeningen
             }
             
             int aantalJuisteGetallen = 0;
-            for (i = 0; i <= 5; i++)
+            for (i = 0; i < lottoTrekking.Length; i++)
             {
                 if (Array.IndexOf(lottoTrekking, lottoFormulier[i]) >= 0)
                 {

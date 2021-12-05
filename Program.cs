@@ -6,6 +6,7 @@ namespace LaboOefeningen
     {
         static void Main(string[] args)
         {
+            //Evaluatie3.AanbevolenHuisdier();
             Console.WriteLine("Welk onderwerp kies je?");
             Console.WriteLine("1. Werken met Visual Studio Code");
             Console.WriteLine("2. Variabelen en datatypes");
@@ -13,7 +14,13 @@ namespace LaboOefeningen
             Console.WriteLine("4. Beslissingen");
             Console.WriteLine("5. Loops");
             Console.WriteLine("6. Arrays");
+            Console.WriteLine("7. Methoden");
+            Console.WriteLine("8. Numerieke Data");
+            Console.WriteLine("10. TextCell");
+            Console.WriteLine("11. TextCellMetRandom");
+            Console.WriteLine("81. ConwayGameOfLifeMain");
             int keuze = Convert.ToInt32(Console.ReadLine());
+            
             if (keuze == 1) 
             {
                 Hoofdstuk01.Keuzemenu();
@@ -37,6 +44,30 @@ namespace LaboOefeningen
             else if (keuze == 6)
             {
                 Hoofdstuk06.Keuzemenu();
+            }
+            else if (keuze == 7)
+            {
+                Hoofdstuk07.Keuzemenu();
+            }
+            else if (keuze == 8)
+            {
+                Hoofdstuk08.Keuzemenu();
+            }
+            else if (keuze == 10)
+            {
+                TextCell.TextCellMain();
+            }
+            else if (keuze == 11)
+            {
+                TextCellMetRandom.TextCellMain();
+            }
+            else if (keuze == 81)
+            {
+                ConwayGameOfLife.ConwayGameOfLifeMain();
+            }
+            else if (keuze == 82)
+            {
+                HeatmapPaardensprong.HeatmapPaardensprongMain();
             }
             // zelf aanvullen met resterende keuzemenu's voor andere onderwerpen
         }
