@@ -91,10 +91,6 @@ namespace LaboOefeningen
         public static void BerekenOntbrekendeWaardenEenKeer(string[] rooster, string[] berekendRooster) {
             Random random = new Random();
             for(int cel = 0; cel < rooster.Length; cel++) {
-                if (rooster[cel] == "=rand()")
-                {
-                    berekendRooster[cel] = random.Next(1, 11).ToString();
-                }
                 if (berekendRooster[cel] is null) {
                     berekendRooster[cel] = BerekenOntbrekendeCelRechtstreeks(rooster[cel], berekendRooster);
                 }

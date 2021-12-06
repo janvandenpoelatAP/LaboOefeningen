@@ -16,9 +16,9 @@ namespace LaboOefeningen
             Console.WriteLine("6. Arrays");
             Console.WriteLine("7. Methoden");
             Console.WriteLine("8. Numerieke Data");
+            Console.WriteLine("9. Multidimensionale arrays");
             Console.WriteLine("10. TextCell");
             Console.WriteLine("11. TextCellMetRandom");
-            Console.WriteLine("81. ConwayGameOfLifeMain");
             int keuze = Convert.ToInt32(Console.ReadLine());
             
             if (keuze == 1) 
@@ -53,6 +53,10 @@ namespace LaboOefeningen
             {
                 Hoofdstuk08.Keuzemenu();
             }
+            else if (keuze == 9)
+            {
+                Hoofdstuk09.Keuzemenu();
+            }
             else if (keuze == 10)
             {
                 TextCell.TextCellMain();
@@ -60,14 +64,6 @@ namespace LaboOefeningen
             else if (keuze == 11)
             {
                 TextCellMetRandom.TextCellMain();
-            }
-            else if (keuze == 81)
-            {
-                ConwayGameOfLife.ConwayGameOfLifeMain();
-            }
-            else if (keuze == 82)
-            {
-                HeatmapPaardensprong.HeatmapPaardensprongMain();
             }
             // zelf aanvullen met resterende keuzemenu's voor andere onderwerpen
         }
