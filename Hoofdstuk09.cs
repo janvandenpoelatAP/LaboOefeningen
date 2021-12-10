@@ -38,52 +38,52 @@ namespace LaboOefeningen
 
         public static void SomPerRij()
         {
-            Console.WriteLine($" Hoe veel rijen telt je array?");
+            Console.WriteLine("Hoe veel rijen telt je array?");
             int aantalRijen = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($" Hoe veel kolommen telt je array?");
+            Console.WriteLine("Hoe veel kolommen telt je array?");
             int aantalKolommen = Convert.ToInt32(Console.ReadLine());
             int[,] getallen = new int[aantalRijen, aantalKolommen];
-            for (int j = 0; j < getallen.GetLength(1); j++)
+            for (int rij = 0; rij < getallen.GetLength(0); rij++)
             {
-                for (int i = 0; i < getallen.GetLength(0); i++)
+                for (int kolom = 0; kolom < getallen.GetLength(1); kolom++)
                 {
-                    Console.WriteLine($"Waarde voor rij {i + 1}, kolom {j + 1}:");
-                    getallen[i, j] = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Waarde voor rij {rij + 1}, kolom {kolom + 1}:");
+                    getallen[rij, kolom] = Convert.ToInt32(Console.ReadLine());
                 }
             }
             Console.WriteLine("Sommen per rij:");
-            for (int i = 0; i < getallen.GetLength(0); i++)
+            for (int rij = 0; rij < getallen.GetLength(0); rij++)
             {
                 int som = 0;
-                for (int j = 0; j < getallen.GetLength(1); j++)
+                for (int kolom = 0; kolom < getallen.GetLength(1); kolom++)
                 {
-                    som += getallen[i, j];
+                    som += getallen[rij, kolom];
                 }
                 Console.WriteLine(som);
             }
         }
         public static void SomPerKolom()
         {
-            Console.WriteLine($" Hoe veel rijen telt je array?");
+            Console.WriteLine("Hoe veel rijen telt je array?");
             int aantalRijen = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($" Hoe veel kolommen telt je array?");
+            Console.WriteLine("Hoe veel kolommen telt je array?");
             int aantalKolommen = Convert.ToInt32(Console.ReadLine());
             int[,] getallen = new int[aantalRijen, aantalKolommen];
-            for (int i = 0; i < getallen.GetLength(0); i++)
+            for (int rij = 0; rij < getallen.GetLength(0); rij++)
             {
-                for (int j = 0; j < getallen.GetLength(1); j++)
+                for (int kolom = 0; kolom < getallen.GetLength(1); kolom++)
                 {
-                    Console.WriteLine($"Waarde voor rij {i + 1}, kolom {j + 1}:");
-                    getallen[i, j] = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Waarde voor rij {rij + 1}, kolom {kolom + 1}:");
+                    getallen[rij, kolom] = Convert.ToInt32(Console.ReadLine());
                 }
             }
             Console.WriteLine("Sommen per kolom:");
-            for (int j = 0; j < getallen.GetLength(1); j++)
+            for (int kolom = 0; kolom < getallen.GetLength(1); kolom++)
             {
                 int som = 0;
-                for (int i = 0; i < getallen.GetLength(0); i++)
+                for (int rij = 0; rij < getallen.GetLength(0); rij++)
                 {
-                    som += getallen[i, j];
+                    som += getallen[rij, kolom];
                 }
                 Console.WriteLine(som);
             }
@@ -91,9 +91,9 @@ namespace LaboOefeningen
         public static void Pixels()
         {
             ConsoleColor[] kleuren = (ConsoleColor[]) Enum.GetValues(typeof(ConsoleColor));
-            Console.WriteLine($" Hoe veel rijen telt je canvas?");
+            Console.WriteLine("Hoe veel rijen telt je canvas?");
             int aantalRijen = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($" Hoe veel kolommen telt je canvas?");
+            Console.WriteLine("Hoe veel kolommen telt je canvas?");
             int aantalKolommen = Convert.ToInt32(Console.ReadLine());
             ConsoleColor[,] canvas = new ConsoleColor[aantalRijen, aantalKolommen];
             int keuze = 0;
@@ -124,14 +124,14 @@ namespace LaboOefeningen
             }
         }
 
-        public static void ShowPixels(ConsoleColor[,] pixelColors)
+        public static void ShowPixels(ConsoleColor[,] canvas)
         {
             Console.Clear();
-            for (int i = 0; i < pixelColors.GetLength(0); i++)
+            for (int rij = 0; rij < canvas.GetLength(0); rij++)
             {
-                for (int j = 0; j < pixelColors.GetLength(1); j++)
+                for (int kolom = 0; kolom < canvas.GetLength(1); kolom++)
                 {
-                    Console.BackgroundColor = pixelColors[i, j];
+                    Console.BackgroundColor = canvas[rij, kolom];
                     Console.Write(" ");
                 }
                 Console.WriteLine();

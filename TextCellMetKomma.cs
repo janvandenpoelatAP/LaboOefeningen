@@ -4,9 +4,9 @@ using System.Text;
 
 namespace LaboOefeningen
 {
-    public class TextCellMetRandom
+    public class TextCellMetKomma
     {
-        public static void TextCellMetRandomMain()
+        public static void TextCellMetKommaMain()
         {
             Console.WriteLine("Hoe veel cellen telt je spreadsheet?");
             int aantalCellen = Convert.ToInt32(Console.ReadLine());
@@ -29,7 +29,6 @@ namespace LaboOefeningen
         public static void BerekenEnToonRooster(string[] rooster)
         {
             string[] berekendRooster = new string[rooster.Length];
-            GenereerRandomGetallen(rooster, berekendRooster);
             KopieerCellenZonderFormule(rooster, berekendRooster);
 
             while (BevatNullWaarden(berekendRooster))
@@ -51,9 +50,15 @@ namespace LaboOefeningen
             for (int i = 0; i < rooster.Length; i++)
             {
                 Console.Write("|");
-                Console.Write(berekendRooster[i].PadRight(10).Substring(0, 10));
+                if (berekendRooster[i] == string.Empty)
+                {
+                    Console.Write(berekendRooster[i].PadRight(10).Substring(0, 10));
+                }
+                else
+                {
+                    Console.Write(Math.Round(Convert.ToDouble(berekendRooster[i]), 2).ToString().PadRight(10).Substring(0, 10));
+                }
             }
-
             Console.WriteLine("|");
         }
 
@@ -77,10 +82,10 @@ namespace LaboOefeningen
                     return null;
                 }
             }
-            int som = 0;
+            double som = 0;
             for (int i = 0; i < somOnderdelen.Length; i++)
             {
-                som = som + Convert.ToInt32(somOnderdelen[i]);
+                som = som + Convert.ToDouble(somOnderdelen[i]);
             }
             return som.ToString();
         }
@@ -159,18 +164,6 @@ namespace LaboOefeningen
             }
 
             return resultaat;
-        }
-
-        public static void GenereerRandomGetallen(string[] roosterIn, string[] roosterUit)
-        {
-            Random random = new Random();
-            for (int cel = 0; cel < roosterIn.Length; cel++)
-            {
-                if (roosterIn[cel] == "=random()") // Skip formules
-                {
-                    roosterUit[cel] = random.Next(1, 11).ToString();
-                }
-            }
         }
 
         public static void KopieerCellenZonderFormule(string[] roosterIn, string[] roosterUit)

@@ -8,9 +8,10 @@ namespace LaboOefeningen
             Console.WriteLine("Welke oefening kies je?");
             Console.WriteLine("1. Optellen");
             Console.WriteLine("2. VerbruikWagen");
-            Console.WriteLine("3. BeetjeWiskunde");
+            Console.WriteLine("3. Beetje Wiskunde");
             Console.WriteLine("4. Gemiddelde");
             Console.WriteLine("5. Maaltafels");
+            Console.WriteLine("6. Ruimte");
             int keuze = Convert.ToInt32(Console.ReadLine());
             if (keuze == 1) 
             {
@@ -31,6 +32,10 @@ namespace LaboOefeningen
             else if (keuze == 5) 
             {
                 Maaltafels();
+            }
+            else if (keuze == 6) 
+            {
+                Ruimte();
             }
         }
         public static void Optellen()
@@ -85,6 +90,19 @@ namespace LaboOefeningen
             teller = teller + 1;
             product = teller * basisgetal;
             Console.WriteLine(teller + " maal " + basisgetal + " is " + product);
+        }
+        public static void Ruimte() 
+        {
+            double gewicht = 69.0;
+            Console.WriteLine("Op Mercurius voel je je alsof je " + gewicht * 0.38 + " weegt");
+            Console.WriteLine("Op Venus voel je je alsof je " + gewicht * 0.91 + " weegt");
+            Console.WriteLine("Op Aarde voel je je alsof je " + gewicht * 1.00 + " weegt");
+            Console.WriteLine("Op Mars voel je je alsof je " + gewicht * 0.38 + " weegt");
+            Console.WriteLine("Op Jupiter voel je je alsof je " + gewicht * 2.34 + " weegt");
+            Console.WriteLine("Op Saturnus voel je je alsof je " + gewicht * 1.06 + " weegt");
+            Console.WriteLine("Op Uranus voel je je alsof je " + gewicht * 0.92 + " weegt");
+            Console.WriteLine("Op Neptunus voel je je alsof je " + gewicht * 1.19 + " weegt");
+            Console.WriteLine("Op Pluto voel je je alsof je " + gewicht * 0.06 + " weegt");
         }
     }
 }

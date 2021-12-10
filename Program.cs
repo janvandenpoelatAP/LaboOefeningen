@@ -18,7 +18,6 @@ namespace LaboOefeningen
             Console.WriteLine("8. Numerieke Data");
             Console.WriteLine("9. Multidimensionale arrays");
             Console.WriteLine("10. TextCell");
-            Console.WriteLine("11. TextCellMetRandom");
             int keuze = Convert.ToInt32(Console.ReadLine());
             
             if (keuze == 1) 
@@ -60,10 +59,6 @@ namespace LaboOefeningen
             else if (keuze == 10)
             {
                 TextCell.TextCellMain();
-            }
-            else if (keuze == 11)
-            {
-                TextCellMetRandom.TextCellMain();
             }
             // zelf aanvullen met resterende keuzemenu's voor andere onderwerpen
         }

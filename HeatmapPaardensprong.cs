@@ -29,9 +29,6 @@ namespace LaboOefeningen
                 }
                 Console.WriteLine();
             }           
-
-
-
         }
         public static string Spring(int[,] schaakBord, string inPositie)
         {

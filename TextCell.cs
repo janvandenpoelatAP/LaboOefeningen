@@ -26,7 +26,7 @@ namespace LaboOefeningen
             }
         }
 
-        public static void BerekenEnToonRooster(String[] rooster)
+        public static void BerekenEnToonRooster(string[] rooster)
         {
             string[] berekendRooster = new string[rooster.Length];
             KopieerCellenZonderFormule(rooster, berekendRooster);
@@ -40,8 +40,8 @@ namespace LaboOefeningen
             for (int i = 0; i < rooster.Length; i++)
             {
                 Console.Write("|");
-                string tekstVoorstelling = GetalVoorstellingNaarLetters(i + 1);
-                Console.Write(tekstVoorstelling.PadRight(10).Substring(0, 10));
+                string tekstVoorstelling = GetalVoorstellingNaarLetters(i + 1).PadRight(10).Substring(0, 10);
+                Console.Write(tekstVoorstelling);
             }
 
             Console.WriteLine("|");
@@ -76,22 +76,19 @@ namespace LaboOefeningen
                     return null;
                 }
             }
-
             int som = 0;
-            for (int somOperand = 0; somOperand < somOnderdelen.Length; somOperand++)
+            for (int i = 0; i < somOnderdelen.Length; i++)
             {
-                int temp;
-                Int32.TryParse(somOnderdelen[somOperand], out temp); // Prevent crash when other field hasn't been filled in yet
-                som += temp;
+                som = som + Convert.ToInt32(somOnderdelen[i]);
             }
-
             return som.ToString();
         }
         
-        public static void BerekenOntbrekendeWaardenEenKeer(string[] rooster, string[] berekendRooster) {
+        public static void BerekenOntbrekendeWaardenEenKeer(string[] rooster, string[] berekendRooster) 
+        {
             for(int cel = 0; cel < rooster.Length; cel++) {
                 if (berekendRooster[cel] is null) {
-                    berekendRooster[cel] = BerekenOntbrekendeCelRechtstreeks(rooster[cel], berekendRooster);
+                    berekendRooster[cel] = BerekenOntbrekendeCelRechtstreeks(rooster[cel].Substring(1), berekendRooster);
                 }
             }
         }
@@ -163,21 +160,27 @@ namespace LaboOefeningen
             return resultaat;
         }
 
-        public static void KopieerCellenZonderFormule(String[] rooster1, String[] rooster2)
+        public static void KopieerCellenZonderFormule(string[] roosterIn, string[] roosterUit)
         {
-            if (rooster1.Length != rooster2.Length) return;
-
-            for (int i = 0; i < rooster1.Length; i++)
+            for (int cel = 0; cel < roosterIn.Length; cel++)
             {
-                if (rooster1[i].Contains("+")) continue; // Skip formules
-
-                rooster2[i] = rooster1[i];
+                if (!roosterIn[cel].StartsWith("=")) // Skip formules
+                {
+                    roosterUit[cel] = roosterIn[cel];
+                }
             }
         }
 
-        public static bool BevatNullWaarden(String[] rooster)
+        public static bool BevatNullWaarden(string[] rooster)
         {
-            return rooster.Any(cel => cel == null);
+            for (int cel = 0; cel < rooster.Length; cel++)
+            {
+                if (rooster[cel] is null)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
