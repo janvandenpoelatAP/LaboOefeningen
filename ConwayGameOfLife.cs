@@ -42,7 +42,7 @@ namespace LaboOefeningen
         {
             CellStatus[,] newConwayGameOfLifeBord = new CellStatus[inArray.GetLength(0), inArray.GetLength(1)];
 
-           // Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+            // Any live cell with fewer than two live neighbours dies, as if by underpopulation.
             // Any live cell with two or three live neighbours lives on to the next generation.
             // Any live cell with more than three live neighbours dies, as if by overpopulation.
             // Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
@@ -89,7 +89,7 @@ namespace LaboOefeningen
             {
                 for (int j = -1; j <= 1; j++)
                 {
-                    if (!((xcoord + i < 0 || xcoord + i >= inArray.GetLength(0)) || (ycoord + j < 0 || ycoord + j >= inArray.GetLength(1)) || (i == 0 || j == 0)))
+                    if (!((xcoord + i < 0 || xcoord + i >= inArray.GetLength(0)) || (ycoord + j < 0 || ycoord + j >= inArray.GetLength(1)) || (i == 0 && j == 0)))
                     { 
                         if (inArray[xcoord + i, ycoord + j] == CellStatus.Levend)
                         {

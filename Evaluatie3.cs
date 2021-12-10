@@ -48,9 +48,9 @@ namespace LaboOefeningen
             {
             }
             Console.WriteLine("De scores zijn:");
-            Console.WriteLine($"Hond: {scoreHond}");
-            Console.WriteLine($"Kat: {scoreKat}");
-            Console.WriteLine($"Vis: {scoreVis}");
+            Console.WriteLine("Hond: " + scoreHond);
+            Console.WriteLine($"Kat: " + scoreKat);
+            Console.WriteLine($"Vis: " + scoreVis);
         }
         public static void HalloweenBegroeter()
         {
@@ -86,7 +86,7 @@ namespace LaboOefeningen
                             break;
                     }
 
-                    Console.WriteLine($"Dag {verkleedAls}, jij mag {snoepSelectie} nemen");
+                    Console.WriteLine($"Dag " + verkleedAls + ", jij mag " + snoepSelectie + " nemen");
                     huidigSnoep++;
 
                     if (huidigSnoep > 2)
@@ -96,7 +96,7 @@ namespace LaboOefeningen
                 }
             } while (!verkleedAls.Equals("niemand"));
 
-            Console.WriteLine($"Programma wordt nu afgesloten. Er is {aantalChocolade} keer chocolade uitgedeeld, {aantalDrop} keer drop, {aantalZuurtjes} keer zuurtjes");
+            Console.WriteLine("Programma wordt nu afgesloten. Er is " + aantalChocolade + " keer chocolade uitgedeeld, " + aantalDrop + " keer drop, " + aantalZuurtjes + " keer zuurtjes");
         }
     }
 }

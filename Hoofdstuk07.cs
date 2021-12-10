@@ -29,9 +29,9 @@ namespace LaboOefeningen
             double diameter;
             Console.Write("Geef de diameter van de cirkel: ");
             diameter = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"De straal van de cirkel is {BerekenStraal(diameter):f3}");
-            Console.WriteLine($"De omtrek van de cirkel is {BerekenOmtrek(diameter):f3}");
-            Console.WriteLine($"De oppervlakte van de cirkel is {BerekenOppervlakte(diameter):f3}");
+            Console.WriteLine($"De straal van de cirkel is {BerekenStraal(diameter):F3}");
+            Console.WriteLine($"De omtrek van de cirkel is {BerekenOmtrek(diameter):F3}");
+            Console.WriteLine($"De oppervlakte van de cirkel is {BerekenOppervlakte(diameter):F3}");
             double getal1, getal2;
             Console.WriteLine("Geef twee getallen: ");
             getal1 = Convert.ToDouble(Console.ReadLine());

@@ -21,7 +21,7 @@ namespace LaboOefeningen
             Console.WriteLine("8. SomVanCijfers");
             Console.WriteLine("9. NaamUitMail");
             Console.WriteLine("10. EersteLetterEnAchternaam");
-            Console.WriteLine("11. Sleutel");
+            Console.WriteLine("11. Toegangscode");
             int keuze = Convert.ToInt32(Console.ReadLine());
             if (keuze == 1) 
             {
@@ -65,7 +65,7 @@ namespace LaboOefeningen
             }
             else if (keuze == 11) 
             {
-                Sleutel();
+                Toegangscode();
             }
             else
             {
@@ -80,13 +80,13 @@ namespace LaboOefeningen
         public static void Maaltafels() 
         {
             int basisGetal = 250;
-            Console.WriteLine($"1 * {basisGetal} is {1 * basisGetal}");
+            Console.WriteLine("1 * " + basisGetal + " is " + 1 * basisGetal);
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine($"2 * {basisGetal} is {2 * basisGetal}");
+            Console.WriteLine("2 * " + basisGetal + " is " + 2 * basisGetal);
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine($"3 * {basisGetal} is {3 * basisGetal}");
+            Console.WriteLine("3 * " + basisGetal + " is " + 3 * basisGetal);
             Console.ReadLine();
             Console.Clear();
         }
@@ -174,7 +174,7 @@ namespace LaboOefeningen
             Console.WriteLine($"Je eerste letter van je voornaam is: {eersteLetter}.");
             Console.WriteLine($"Je achternaam is: {achternaam}");
         }
-        public static void Sleutel()
+        public static void Toegangscode()
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.ForegroundColor = ConsoleColor.White;
