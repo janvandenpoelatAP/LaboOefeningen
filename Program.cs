@@ -17,7 +17,8 @@ namespace LaboOefeningen
             Console.WriteLine("7. Methoden");
             Console.WriteLine("8. Numerieke Data");
             Console.WriteLine("9. Multidimensionale arrays");
-            Console.WriteLine("10. TextCell");
+            Console.WriteLine("10. Gevorderde tekstverwerking");
+            Console.WriteLine("20. TextCell");
             int keuze = Convert.ToInt32(Console.ReadLine());
             
             if (keuze == 1) 
@@ -57,6 +58,10 @@ namespace LaboOefeningen
                 Hoofdstuk09.Keuzemenu();
             }
             else if (keuze == 10)
+            {
+                Hoofdstuk10.Keuzemenu();
+            }
+            else if (keuze == 20)
             {
                 TextCell.TextCellMain();
             }
